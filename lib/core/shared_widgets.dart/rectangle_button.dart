@@ -1,4 +1,4 @@
-import 'package:fitness_app/core/constants/color_constants.dart';
+import 'package:fitness_app/core/constants/colors_constants.dart';
 import 'package:flutter/material.dart';
 
 //? isimlendirme
@@ -19,7 +19,7 @@ class RectangleButton extends StatelessWidget {
   final Color passiveColor; //? isimlendirme
 
   Color get containerColor => isActive ? color : passiveColor;
-  Function get buttonOnTap =>
+  Function get onTapFunction =>
       isActive ? onTap : () {}; //? ikinci doğru kullanım mı?
 
   @override
@@ -29,7 +29,7 @@ class RectangleButton extends StatelessWidget {
     //? buraya parçalamam gerekir mi?
     return GestureDetector(
       onTap: () {
-        buttonOnTap();
+        onTapFunction();
       },
       child: Container(
         height: height * 0.07,
