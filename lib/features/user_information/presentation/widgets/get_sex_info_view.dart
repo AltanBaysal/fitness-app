@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
 import '../../../../core/constants/icons_constants.dart';
 import '../../../../core/shared_widgets.dart/icon_card.dart';
+
 
 class GetSexInfoView extends StatelessWidget {
   const GetSexInfoView({Key? key}) : super(key: key);
