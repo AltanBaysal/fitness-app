@@ -1,11 +1,12 @@
-import 'package:fitness_app/features/credential/presentation/pages/credential_page.dart';
 import 'package:flutter/material.dart';
+import 'features/user_information/presentation/pages/get_body_info_page.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 //! input typlar ayarlanacak
+//! yatay ekranı kitle
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const CredentialPage(),
+      home: const GetBodyInfoPage(),
     );
   }
 }

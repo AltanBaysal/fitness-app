@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class GenderCard extends StatelessWidget {
-  const GenderCard({
+class IconCard extends StatelessWidget {
+  const IconCard({
     Key? key,
     required this.size,
     required this.icon,

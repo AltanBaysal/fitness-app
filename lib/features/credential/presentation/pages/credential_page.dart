@@ -1,6 +1,5 @@
 import 'package:fitness_app/core/shared_widgets.dart/back_button.dart';
 import 'package:fitness_app/core/shared_widgets.dart/rectangle_button.dart';
-import 'package:fitness_app/features/credential/presentation/widgets/sign_in_view.dart';
 import 'package:fitness_app/features/credential/presentation/widgets/sign_up_view.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/enums/horizontal_direction_enum.dart';
