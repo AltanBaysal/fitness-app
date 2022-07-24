@@ -5,6 +5,7 @@ void main() {
   runApp(const MyApp());
 }
 
+//! input typlar ayarlanacak
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
