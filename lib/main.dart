@@ -1,4 +1,4 @@
-import 'package:fitness_app/features/user_information/presentation/pages/get_name_page.dart';
+import 'package:fitness_app/features/credential/presentation/pages/credential_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const GetNamePage(),
+      home: const CredentialPage(),
     );
   }
 }

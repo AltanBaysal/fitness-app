@@ -21,14 +21,16 @@ class TwoButtonSwitch extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return Container(
-      padding: const EdgeInsets.all(1),
+      padding: const EdgeInsets.all(0.1),
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(20)),
         color: CustomColors.lightGrey,
       ),
       height: height * 0.07,
+
       child: Row(
         children: [
+          
           _Button(
             isActive: activeSide == HorizontalDirection.left,
             buttonText: leftButtonText,

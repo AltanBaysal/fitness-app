@@ -10,41 +10,39 @@ class GetNamePage extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      body: Center(
-        child: Container(
-          margin: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
+      body: Container(
+        margin: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                CustomBackButton(
+                  mainContext: context,
+                  size: width * 0.05,
+                )
+              ],
+            ),
+            SizedBox(
+              height: height * 0.18,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomBackButton(
-                    mainContext: context,
-                    size: width * 0.05,
-                  )
+                  Text(
+                    "Your Name ?",
+                    style: TextStyle(fontSize: width * 0.08),
+                  ),
+                  const TextField(
+                    decoration: InputDecoration(
+                      label: Text("Your Name"),
+                    ),
+                  ),
                 ],
               ),
-              SizedBox(
-                height: height * 0.18,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Your Name ?",
-                      style: TextStyle(fontSize: width * 0.08),
-                    ),
-                    const TextField(
-                      decoration: InputDecoration(
-                        label: Text("Your Name"),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              RectangleButton(text: "Continue", onTap: () {}),
-            ],
-          ),
+            ),
+            RectangleButton(text: "Continue", onTap: () {}),
+          ],
         ),
       ),
     );
