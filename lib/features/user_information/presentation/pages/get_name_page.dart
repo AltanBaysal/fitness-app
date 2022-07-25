@@ -1,3 +1,4 @@
+import 'package:fitness_app/core/constants/text_constants.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/shared_widgets.dart/back_button.dart';
 import '../../../../core/shared_widgets.dart/rectangle_button.dart';
@@ -30,18 +31,18 @@ class GetNamePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Your Name ?",
+                    EnglishText.yourNameWithQuestionMark,
                     style: TextStyle(fontSize: width * 0.08),
                   ),
                   const TextField(
                     decoration: InputDecoration(
-                      label: Text("Your Name"),
+                      label: Text(EnglishText.yourName),
                     ),
                   ),
                 ],
               ),
             ),
-            RectangleButton(text: "Continue", onTap: () {}),
+            RectangleButton(text: EnglishText.continueText, onTap: () {}),
           ],
         ),
       ),

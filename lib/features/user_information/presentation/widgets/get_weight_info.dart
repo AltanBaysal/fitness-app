@@ -1,5 +1,6 @@
 
 
+import 'package:fitness_app/core/constants/text_constants.dart';
 import 'package:fitness_app/features/user_information/presentation/widgets/custom_number_picker.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class GetWeightInfo extends StatelessWidget {
               bottom: height * 0.11,
             ),
             child: Text(
-              "How much is your Weight?",
+             EnglishText.howMuchIsYourWeight,
               style: TextStyle(fontSize: width * 0.06),
             ),
           ),

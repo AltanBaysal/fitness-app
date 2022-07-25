@@ -1,3 +1,4 @@
+import 'package:fitness_app/core/constants/text_constants.dart';
 import 'package:fitness_app/features/credential/presentation/widgets/terms_of_use_text.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/constants/colors_constants.dart';
@@ -22,7 +23,7 @@ class SignUpView extends StatelessWidget {
                       top: height * 0.03,
                       bottom: height * 0.015,
                     ),
-                    child: const Text("Email"),
+                    child: const Text(EnglishText.email),
                   ),
                   const SizedBox(
                     height: 50,
@@ -49,7 +50,7 @@ class SignUpView extends StatelessWidget {
                       top: height * 0.03,
                       bottom: height * 0.015,
                     ),
-                    child: const Text("Create Password"),
+                    child: const Text(EnglishText.createPassword),
                   ),
                   const SizedBox(
                     height: 50,
@@ -76,7 +77,7 @@ class SignUpView extends StatelessWidget {
                       top: height * 0.03,
                       bottom: height * 0.015,
                     ),
-                    child: const Text("Re-write Password"),
+                    child: const Text(EnglishText.reWritePassword),
                   ),
                   const SizedBox(
                     height: 50,

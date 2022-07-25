@@ -1,3 +1,4 @@
+import 'package:fitness_app/core/constants/text_constants.dart';
 import 'package:flutter/material.dart';
 
 class TermsOfUseText extends StatelessWidget {
@@ -11,32 +12,32 @@ class TermsOfUseText extends StatelessWidget {
       child: RichText(
         textAlign: TextAlign.center,
         text: const TextSpan(
-            style: TextStyle(
-              color: Colors.grey,
-              height: 1.3,
+          style: TextStyle(
+            color: Colors.grey,
+            height: 1.3,
+          ),
+          children: [
+            TextSpan(
+              text: EnglishText.loremIpsum1,
             ),
-            children: [
-              TextSpan(
-                text:
-                    "Curabitur lobortis id lorem id bibendum. Ut id consectetur magna. ",
+            TextSpan(
+              text: EnglishText.termsOfUse,
+              style: TextStyle(
+                color: Colors.blue,
+                decoration: TextDecoration.underline,
               ),
-              TextSpan(
-                text: "Terms of Use",
-                style: TextStyle(
-                  color: Colors.blue,
-                  decoration: TextDecoration.underline,
-                ),
+            ),
+            TextSpan(text: EnglishText.loremIpsum2),
+            TextSpan(
+              text: EnglishText.privacyNotice,
+              style: TextStyle(
+                color: Colors.blue,
+                decoration: TextDecoration.underline,
               ),
-              TextSpan(text: " augue enim, pulvinar "),
-              TextSpan(
-                text: "Privacy Notice",
-                style: TextStyle(
-                  color: Colors.blue,
-                  decoration: TextDecoration.underline,
-                ),
-              ),
-              TextSpan(text: " lacinia at."),
-            ]),
+            ),
+            TextSpan(text: EnglishText.loremIpsum3),
+          ],
+        ),
       ),
     );
   }

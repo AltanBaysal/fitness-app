@@ -1,3 +1,4 @@
+import 'package:fitness_app/core/constants/text_constants.dart';
 import 'package:fitness_app/features/user_information/presentation/widgets/custom_number_picker.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class GetLenghtInfo extends StatelessWidget {
               bottom: height * 0.11,
             ),
             child: Text(
-              "How much is your lenght?",
+              EnglishText.howMuchIsYourLenght,
               style: TextStyle(fontSize: width * 0.06),
             ),
           ),

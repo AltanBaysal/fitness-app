@@ -1,4 +1,5 @@
 import 'package:fitness_app/core/constants/colors_constants.dart';
+import 'package:fitness_app/core/constants/text_constants.dart';
 import 'package:flutter/material.dart';
 
 class SignInView extends StatelessWidget {
@@ -16,7 +17,7 @@ class SignInView extends StatelessWidget {
               Container(
                 margin:
                     EdgeInsets.only(top: height * 0.03, bottom: height * 0.015),
-                child: const Text("Email"),
+                child: const Text(EnglishText.email),
               ),
               const SizedBox(
                 height: 50,
@@ -40,7 +41,7 @@ class SignInView extends StatelessWidget {
               Container(
                 margin:
                     EdgeInsets.only(top: height * 0.03, bottom: height * 0.015),
-                child: const Text("Password"),
+                child: const Text(EnglishText.password),
               ),
               const SizedBox(
                 height: 50,
@@ -60,7 +61,7 @@ class SignInView extends StatelessWidget {
           ),
           SizedBox(height: height*0.02,),
           const Text(
-            "Forgot Password?",
+            EnglishText.forgotPassword,
             style: TextStyle(
               color: Colors.grey,
               decoration: TextDecoration.underline,

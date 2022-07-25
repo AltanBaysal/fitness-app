@@ -1,3 +1,4 @@
+import 'package:fitness_app/core/constants/text_constants.dart';
 import 'package:fitness_app/features/user_information/presentation/widgets/get_age_info_view.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/shared_widgets.dart/back_button.dart';
@@ -30,7 +31,7 @@ class GetBodyInfoPage extends StatelessWidget {
             
             Column(
               children: [
-                RectangleButton(text: "Next", onTap: () {}),
+                RectangleButton(text: EnglishText.next, onTap: () {}),
                 
                 const SizedBox(
                   height: 10,

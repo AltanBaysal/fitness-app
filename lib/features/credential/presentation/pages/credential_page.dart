@@ -1,3 +1,4 @@
+import 'package:fitness_app/core/constants/text_constants.dart';
 import 'package:fitness_app/core/shared_widgets.dart/back_button.dart';
 import 'package:fitness_app/core/shared_widgets.dart/rectangle_button.dart';
 import 'package:fitness_app/features/credential/presentation/widgets/sign_up_view.dart';
@@ -33,8 +34,8 @@ class CredentialPage extends StatelessWidget {
               child: TwoButtonSwitch(
                 activeSide: HorizontalDirection.right,
                 onChanged: (direction) {},
-                leftButtonText: "Sign up",
-                rightButtonText: "Sing In",
+                leftButtonText: EnglishText.signUp,
+                rightButtonText: EnglishText.signIn,
               ),
             ),
             
@@ -42,7 +43,7 @@ class CredentialPage extends StatelessWidget {
 
             Column(
               children: [
-                RectangleButton(text: "Continue", onTap: () {}),
+                RectangleButton(text: EnglishText.continueText, onTap: () {}),
               ],
             ),
           ],
