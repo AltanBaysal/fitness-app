@@ -11,10 +11,10 @@ class UserInformationController with ChangeNotifier{
 
   final TextEditingController getNameTextController =TextEditingController();
 
-  Sex selectedSex = Sex.male; //! burayı unselected hale getir null ile
-  int selectedAge = 0; //! burayı unselected hale getir null ile
-  int selectedLenght = 0; //! burayı unselected hale getir null ile
-  int selectedWeight = 0; //! burayı unselected hale getir null ile
+  Sex selectedSex = Sex.unkown;
+  int selectedAge = 0;
+  int selectedLenght = 0;
+  int selectedWeight = 0;
   
 
   void selectSex(Sex sex){

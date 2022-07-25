@@ -1,10 +1,13 @@
 import 'package:fitness_app/core/constants/text_constants.dart';
+import 'package:fitness_app/core/enums/log_in_type.dart';
 import 'package:fitness_app/core/shared_widgets.dart/custom_back_button.dart';
 import 'package:fitness_app/core/shared_widgets.dart/rectangle_button.dart';
-import 'package:fitness_app/features/credential/presentation/widgets/sign_up_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../../../core/enums/horizontal_direction_enum.dart';
 import '../../../../core/shared_widgets.dart/two_button_switch.dart';
+import '../provider/credential_controller.dart';
+import '../widgets/log_in_view_chooser.dart';
 
 class CredentialPage extends StatelessWidget {
   const CredentialPage({Key? key}) : super(key: key);
@@ -28,18 +31,46 @@ class CredentialPage extends StatelessWidget {
                 )
               ],
             ),
-
-            Container(
-              margin: EdgeInsets.only(top: height*0.07,bottom: height*0.02),
-              child: TwoButtonSwitch(
-                activeSide: HorizontalDirection.right,
-                onChanged: (direction) {},
-                leftButtonText: EnglishText.signUp,
-                rightButtonText: EnglishText.signIn,
-              ),
+            Consumer<CredentialController>(
+              builder: (
+                BuildContext context,
+                CredentialController value,
+                Widget? child,
+              ) {
+                return Container(
+                  margin: EdgeInsets.only(
+                    top: height * 0.07,
+                    bottom: height * 0.02,
+                  ),
+                  child: TwoButtonSwitch(
+                    activeSide: value.selectedLogInType == LogInType.signUp
+                        ? HorizontalDirection.left
+                        : HorizontalDirection.right,
+                    onChanged: (direction) {
+                      value.setLogInType(
+                        direction == HorizontalDirection.left
+                            ? LogInType.signUp
+                            : LogInType.signIn,
+                      );
+                    },
+                    leftButtonText: EnglishText.signUp,
+                    rightButtonText: EnglishText.signIn,
+                  ),
+                );
+              },
             ),
-            
-            const SignUpView(),
+  
+            Consumer<CredentialController>(
+              builder: (
+                BuildContext context,
+                CredentialController value,
+                Widget? child,
+              ) {
+                return LogInViewChooser(
+                  logInType: value.selectedLogInType,
+                );
+              },
+            ),
 
             Column(
               children: [

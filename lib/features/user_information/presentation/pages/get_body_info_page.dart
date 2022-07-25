@@ -6,7 +6,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/constants/colors_constants.dart';
 import '../../../../core/constants/icons_constants.dart';
-import '../../../../core/shared_widgets.dart/custom_back_button.dart';
 import '../../../../core/shared_widgets.dart/rectangle_button.dart';
 import '../widgets/body_info_view_chooser.dart';
 import '../widgets/info_page_dots_indicator.dart';
