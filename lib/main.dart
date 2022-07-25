@@ -1,12 +1,20 @@
+import 'package:fitness_app/core/init/controller_list.dart';
+import 'package:fitness_app/features/user_information/presentation/pages/get_name_page.dart';
 import 'package:flutter/material.dart';
-import 'features/user_information/presentation/pages/get_body_info_page.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: controllerList,
+      child: const MyApp(),
+    ),
+  );
 }
 
-//! input typlar ayarlanacak
+//! text field input typlar ayarlanacak
 //! yatay ekranı kitle
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
@@ -15,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const GetBodyInfoPage(),
+      home: const GetNamePage(),
     );
   }
 }

@@ -1,6 +1,9 @@
 import 'package:fitness_app/core/constants/text_constants.dart';
+import 'package:fitness_app/features/user_information/presentation/pages/get_body_info_page.dart';
+import 'package:fitness_app/features/user_information/presentation/provider/user_information_controller.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/shared_widgets.dart/back_button.dart';
+import 'package:provider/provider.dart';
+import '../../../../core/shared_widgets.dart/custom_back_button.dart';
 import '../../../../core/shared_widgets.dart/rectangle_button.dart';
 
 class GetNamePage extends StatelessWidget {
@@ -34,15 +37,35 @@ class GetNamePage extends StatelessWidget {
                     EnglishText.yourNameWithQuestionMark,
                     style: TextStyle(fontSize: width * 0.08),
                   ),
-                  const TextField(
-                    decoration: InputDecoration(
-                      label: Text(EnglishText.yourName),
-                    ),
+                  Consumer<UserInformationController>(
+                    builder: (
+                      BuildContext context,
+                      UserInformationController userInformationController,
+                      Widget? child,
+                    ) {
+                      return TextField(
+                        controller:
+                            userInformationController.getNameTextController,
+                        decoration: const InputDecoration(
+                          label: Text(EnglishText.yourName),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
             ),
-            RectangleButton(text: EnglishText.continueText, onTap: () {}),
+            RectangleButton(
+              text: EnglishText.continueText,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const GetBodyInfoPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),

@@ -17,14 +17,13 @@ class IconCard extends StatelessWidget {
 
 
   Color? get iconColor => isActive ? null : Colors.grey;
-  Function get onTapFunction => isActive ? onTap : () {};
 
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        onTapFunction();
+        onTap();
       },
       child: Card(
         elevation: 9,

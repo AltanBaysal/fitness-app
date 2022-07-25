@@ -1,8 +1,10 @@
 
 
 import 'package:fitness_app/core/constants/text_constants.dart';
+import 'package:fitness_app/features/user_information/presentation/provider/user_information_controller.dart';
 import 'package:fitness_app/features/user_information/presentation/widgets/custom_number_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class GetWeightInfo extends StatelessWidget {
   const GetWeightInfo({Key? key}) : super(key: key);
@@ -28,7 +30,12 @@ class GetWeightInfo extends StatelessWidget {
           CustomNumberPicker(
             minNum: 20,
             maxNum: 500,
-            onChanged: (i) {},
+            onChanged: (weight) {
+              Provider.of<UserInformationController>(
+                context,
+                listen: false,
+              ).selectedAge = weight;
+            },
           ),
         ],
       ),
