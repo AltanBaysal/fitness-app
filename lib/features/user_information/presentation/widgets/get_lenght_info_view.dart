@@ -25,6 +25,7 @@ class GetLenghtInfoView extends StatelessWidget {
               style: TextStyle(fontSize: width * 0.06),
             ),
           ),
+
           CustomNumberPicker(
             minNum: 50,
             maxNum: 251,
@@ -32,7 +33,7 @@ class GetLenghtInfoView extends StatelessWidget {
               Provider.of<UserInformationController>(
                 context,
                 listen: false,
-              ).selectedAge = lenght;
+              ).selectedLenght = lenght;
             },
           ),
         ],

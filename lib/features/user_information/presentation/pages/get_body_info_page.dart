@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import '../../../../core/constants/colors_constants.dart';
 import '../../../../core/constants/icons_constants.dart';
 import '../../../../core/shared_widgets.dart/rectangle_button.dart';
+import '../../../home/home_page.dart';
 import '../widgets/body_info_view_chooser.dart';
 import '../widgets/info_page_dots_indicator.dart';
 
@@ -40,7 +41,6 @@ class GetBodyInfoPage extends StatelessWidget {
                           .values[value.activeBodyInfoPage.index - 1]);
                     }
                   },
-                  
                   child: SizedBox(
                     height: width * 0.05,
                     width: width * 0.05,
@@ -50,11 +50,9 @@ class GetBodyInfoPage extends StatelessWidget {
                       color: CustomColors.lightGrey,
                     ),
                   ),
-
                 ),
               ],
             ),
-            
             Consumer<UserInformationController>(
               builder: (
                 BuildContext context,
@@ -65,7 +63,6 @@ class GetBodyInfoPage extends StatelessWidget {
                     activePage: value.activeBodyInfoPage);
               },
             ),
-            
             Column(
               children: [
                 RectangleButton(
@@ -79,15 +76,24 @@ class GetBodyInfoPage extends StatelessWidget {
 
                     if (value.activeBodyInfoPage ==
                         GetBodyInfoPageEnum.values.last) {
+                      value.setUserInfos();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomePage(),
+                        ),
+                      );
                     } else {
                       value.setActiveBodyInfoPage(GetBodyInfoPageEnum
                           .values[value.activeBodyInfoPage.index + 1]);
                     }
                   },
                 ),
+
                 const SizedBox(
                   height: 10,
                 ),
+                
                 Consumer<UserInformationController>(
                   builder: (
                     BuildContext context,

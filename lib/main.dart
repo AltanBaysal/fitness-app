@@ -23,6 +23,7 @@ class FitnessApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -30,3 +31,19 @@ class FitnessApp extends StatelessWidget {
     );
   }
 }
+
+
+/*
+Selector<MainPageController, MainPageMod>(
+          selector: (
+            BuildContext context,
+            MainPageController mainPageController,
+          ) {
+            return mainPageController.mainPageMod;
+          },
+          builder:
+              (BuildContext context, MainPageMod mainPageMod, Widget? child) {
+            return MainPageSliverAppBarActions(mainPageMod: mainPageMod);
+          },
+        ),
+*/

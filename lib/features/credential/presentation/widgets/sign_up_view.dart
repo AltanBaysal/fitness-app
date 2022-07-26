@@ -1,7 +1,11 @@
 import 'package:fitness_app/core/constants/text_constants.dart';
+import 'package:fitness_app/core/helper/email_validation.dart';
+import 'package:fitness_app/features/credential/presentation/provider/credential_controller.dart';
 import 'package:fitness_app/features/credential/presentation/widgets/terms_of_use_text.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../../../core/constants/colors_constants.dart';
+import '../../../../core/helper/password_validation.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({Key? key}) : super(key: key);
@@ -9,7 +13,8 @@ class SignUpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    return Expanded(
+    return SizedBox(
+      height: height * 0.65,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -25,18 +30,30 @@ class SignUpView extends StatelessWidget {
                     ),
                     child: const Text(EnglishText.email),
                   ),
-                  const SizedBox(
-                    height: 50,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(13)),
-                          borderSide: BorderSide(
-                            color: CustomColors.lightGrey,
-                            width: 0.01,
+                  SizedBox(
+                    height: height * 0.09,
+                    child: Consumer<CredentialController>(
+                      builder: (
+                        BuildContext context,
+                        CredentialController value,
+                        Widget? child,
+                      ) {
+                        return TextFormField(
+                          controller: value.emailSignUpTextController,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          validator: emailValidator,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(13)),
+                              borderSide: BorderSide(
+                                color: CustomColors.lightGrey,
+                                width: 0.01,
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
+                        );
+                      },
                     ),
                   ),
                 ],
@@ -52,23 +69,35 @@ class SignUpView extends StatelessWidget {
                     ),
                     child: const Text(EnglishText.createPassword),
                   ),
-                  const SizedBox(
-                    height: 50,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(13)),
-                          borderSide: BorderSide(
-                            color: CustomColors.lightGrey,
-                            width: 0.01,
+                  SizedBox(
+                    height: height * 0.09,
+                    child: Consumer<CredentialController>(
+                      builder: (
+                        BuildContext context,
+                        CredentialController value,
+                        Widget? child,
+                      ) {
+                        return TextFormField(
+                          controller: value.passwordSignUpTextController,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          validator: passwordValidator,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(13)),
+                              borderSide: BorderSide(
+                                color: CustomColors.lightGrey,
+                                width: 0.01,
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
+                        );
+                      },
                     ),
                   ),
                 ],
               ),
-            
+
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -79,25 +108,36 @@ class SignUpView extends StatelessWidget {
                     ),
                     child: const Text(EnglishText.reWritePassword),
                   ),
-                  const SizedBox(
-                    height: 50,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(13)),
-                          borderSide: BorderSide(
-                            color: CustomColors.lightGrey,
-                            width: 0.01,
+                  SizedBox(
+                    height: height * 0.09,
+                    child: Consumer<CredentialController>(
+                      builder: (
+                        BuildContext context,
+                        CredentialController value,
+                        Widget? child,
+                      ) {
+                        return TextFormField(
+                          controller: value.passwordCheckSignUpTextController,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          validator: value.secondPasswordValidator,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(13)),
+                              borderSide: BorderSide(
+                                color: CustomColors.lightGrey,
+                                width: 0.01,
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
+                        );
+                      },
                     ),
                   ),
                 ],
               ),
             ],
           ),
-          
           const TermsOfUseText(),
         ],
       ),

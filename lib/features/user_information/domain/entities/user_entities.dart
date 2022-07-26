@@ -1,14 +1,12 @@
 import '../../../../core/enums/sex.dart';
 
-class UserEntities{
-  String? eMail;
-  String? password;
-  
+class UserInfoEntities{
+ 
   String? name;
   int? age;
   int? weight;
   int? lenght;
   Sex? sex;
 
-  UserEntities(); 
+  UserInfoEntities(); 
 }

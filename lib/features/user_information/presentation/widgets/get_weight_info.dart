@@ -34,7 +34,7 @@ class GetWeightInfo extends StatelessWidget {
               Provider.of<UserInformationController>(
                 context,
                 listen: false,
-              ).selectedAge = weight;
+              ).selectedWeight = weight;
             },
           ),
         ],
