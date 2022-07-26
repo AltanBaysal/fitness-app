@@ -7,7 +7,7 @@ class RectangleButton extends StatelessWidget {
     Key? key,
     required this.onTap,
     this.isActive = true, //? bu kullanımda sıkıntı var mı ?
-    this.text = "",
+    required this.text,
     this.color = CustomColors.darkBlue, //? bu kullanımda sıkıntı var mı ?
     this.passiveColor = Colors.grey,
   }) : super(key: key);
