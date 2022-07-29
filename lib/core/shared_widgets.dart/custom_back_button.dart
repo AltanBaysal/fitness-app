@@ -11,7 +11,7 @@ class CustomBackButton extends StatelessWidget {
   }) : super(key: key);
 
   final BuildContext mainContext;
-  final double size;
+  final double size; //! TODO double yerine Size kullan
 
   @override
   Widget build(BuildContext context) {

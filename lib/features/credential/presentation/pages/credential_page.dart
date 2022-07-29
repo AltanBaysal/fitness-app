@@ -4,7 +4,6 @@ import 'package:fitness_app/core/shared_widgets.dart/custom_back_button.dart';
 import 'package:fitness_app/core/shared_widgets.dart/rectangle_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../../core/enums/horizontal_direction_enum.dart';
 import '../../../../core/shared_widgets.dart/two_button_switch.dart';
 import '../../../user_information/presentation/pages/get_name_page.dart';
 import '../provider/credential_controller.dart';
@@ -34,7 +33,6 @@ class CredentialPage extends StatelessWidget {
                     )
                   ],
                 ),
-
                 Consumer<CredentialController>(
                   builder: (
                     BuildContext context,
@@ -47,23 +45,17 @@ class CredentialPage extends StatelessWidget {
                         bottom: height * 0.02,
                       ),
                       child: TwoButtonSwitch(
-                        activeSide: value.selectedLogInType == LogInType.signUp
-                            ? HorizontalDirection.left
-                            : HorizontalDirection.right,
-                        onChanged: (direction) {
+                        activeIndex: value.selectedLogInType.index,
+                        onChanged: (index) {
                           value.setLogInType(
-                            direction == HorizontalDirection.left
-                                ? LogInType.signUp
-                                : LogInType.signIn,
+                            value.selectedLogInType = LogInType.values[index],
                           );
                         },
-                        leftButtonText: EnglishText.signUp,
-                        rightButtonText: EnglishText.signIn,
+                        buttonTexts: const [EnglishText.signUp, EnglishText.signIn],
                       ),
                     );
                   },
                 ),
-
                 Consumer<CredentialController>(
                   builder: (
                     BuildContext context,
@@ -75,7 +67,6 @@ class CredentialPage extends StatelessWidget {
                     );
                   },
                 ),
-
                 Column(
                   children: [
                     Consumer<CredentialController>(
@@ -85,12 +76,11 @@ class CredentialPage extends StatelessWidget {
                         Widget? child,
                       ) {
                         return RectangleButton(
-                          isActive: value.selectedLogInType == LogInType.signIn ? value.isSignInValid: value.isSignUpValid,
+                          isActive:
+                              value.selectedLogInType == LogInType.signIn ? value.isSignInValid : value.isSignUpValid,
                           text: EnglishText.continueText,
                           onTap: () {
-                            CredentialController value =
-                                Provider.of<CredentialController>(context,
-                                    listen: false);
+                            CredentialController value = Provider.of<CredentialController>(context, listen: false); //! FIXME Gereksiz instance
 
                             switch (value.selectedLogInType) {
                               case LogInType.signIn:

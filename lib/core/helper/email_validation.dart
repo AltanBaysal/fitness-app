@@ -8,7 +8,6 @@ extension EmailValidator on String {
   }
 }
 
-//? bunun burda olmaması gerek gibi :(
 String? emailValidator(String? email) {
   if (email == null || email.isEmpty) {
     return EnglishText.thisFieldCannotBeLeftBlank;

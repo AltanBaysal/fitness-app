@@ -5,29 +5,27 @@ import 'package:fitness_app/features/user_information/domain/usecases/user_build
 import 'package:flutter/material.dart';
 import '../../domain/usecases/edit_user_info.dart';
 
-
-class UserInformationController with ChangeNotifier{
+class UserInformationController with ChangeNotifier {
   GetBodyInfoPageEnum activeBodyInfoPage = GetBodyInfoPageEnum.sex;
 
-  final TextEditingController getNameTextController =TextEditingController();
+  final TextEditingController getNameTextController = TextEditingController();
 
-  Sex selectedSex = Sex.unkown;
+  Sex selectedSex = Sex.unknown;
   int selectedAge = 0;
   int selectedLenght = 0;
   int selectedWeight = 0;
-  
 
-  void selectSex(Sex sex){
+  void selectSex(Sex sex) {
     selectedSex = sex;
     notifyListeners();
   }
 
-  void setActiveBodyInfoPage(GetBodyInfoPageEnum pageEnum){
+  void setActiveBodyInfoPage(GetBodyInfoPageEnum pageEnum) {
     activeBodyInfoPage = pageEnum;
     notifyListeners();
   }
 
-  void setUserInfos(){
+  void setUserInfos() {
     UserBuilder userBuilder = UserBuilder(user: UserInfoEntities());
     userBuilder.setUserName(getNameTextController.text);
     userBuilder.setUserSex(selectedSex);
@@ -35,7 +33,7 @@ class UserInformationController with ChangeNotifier{
     userBuilder.setUserWeight(selectedWeight);
     userBuilder.setUserLenght(selectedLenght);
 
-    EditUserInfo editUserInfo = EditUserInfo(); 
+    EditUserInfo editUserInfo = EditUserInfo();
     editUserInfo.addBodyInfo(userBuilder.user);
-  }  
+  }
 }

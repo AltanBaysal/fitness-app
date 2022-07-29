@@ -73,7 +73,7 @@ class SignInView extends StatelessWidget {
                   ) {
                     return TextFormField(
                       controller: value.passwordSignInTextController,
-                      autovalidateMode: AutovalidateMode.onUserInteraction, //? bunu alway kullanmak zorunda kaldım :(
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: passwordValidator,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(

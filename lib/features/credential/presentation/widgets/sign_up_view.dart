@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import '../../../../core/constants/colors_constants.dart';
 import '../../../../core/helper/password_validation.dart';
 
+//! FIXME TextFormField'lar icin ortak widget yaz ve cikar
 class SignUpView extends StatelessWidget {
   const SignUpView({Key? key}) : super(key: key);
 
@@ -44,8 +45,7 @@ class SignUpView extends StatelessWidget {
                           validator: emailValidator,
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(13)),
+                              borderRadius: BorderRadius.all(Radius.circular(13)),
                               borderSide: BorderSide(
                                 color: CustomColors.lightGrey,
                                 width: 0.01,
@@ -58,7 +58,6 @@ class SignUpView extends StatelessWidget {
                   ),
                 ],
               ),
-
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -83,8 +82,7 @@ class SignUpView extends StatelessWidget {
                           validator: passwordValidator,
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(13)),
+                              borderRadius: BorderRadius.all(Radius.circular(13)),
                               borderSide: BorderSide(
                                 color: CustomColors.lightGrey,
                                 width: 0.01,
@@ -97,7 +95,6 @@ class SignUpView extends StatelessWidget {
                   ),
                 ],
               ),
-
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -122,8 +119,7 @@ class SignUpView extends StatelessWidget {
                           validator: value.secondPasswordValidator,
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(13)),
+                              borderRadius: BorderRadius.all(Radius.circular(13)),
                               borderSide: BorderSide(
                                 color: CustomColors.lightGrey,
                                 width: 0.01,

@@ -1,2 +1,2 @@
 
-enum Sex{male,female,unkown}
+enum Sex{male,female,unknown}
