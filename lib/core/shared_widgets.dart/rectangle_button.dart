@@ -6,7 +6,7 @@ class RectangleButton extends StatelessWidget {
   const RectangleButton({
     Key? key,
     required this.onTap,
-    required this.text,
+    required this.child,
     this.isActive = true,
     this.color = CustomColors.darkBlue,
     this.passiveColor = Colors.grey,
@@ -16,7 +16,7 @@ class RectangleButton extends StatelessWidget {
   final bool isActive;
   final VoidCallback onTap;
   final Color passiveColor; //? isimlendirme
-  final String text;
+  final Widget child;
 
   Color get containerColor => isActive ? color : passiveColor;
 
@@ -35,15 +35,27 @@ class RectangleButton extends StatelessWidget {
           color: containerColor,
         ),
         child: Center(
-          child: Text(
+          child: child,
+        ),
+      ),
+    );
+  }
+}
+
+
+/*
+Text(
             text,
             style: TextStyle(
               color: Colors.white,
               fontSize: height * 0.023,
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
+
+
+SizedBox(
+              height: height * 0.04,
+              width: height * 0.04,
+              child: SvgPicture.asset(icon, fit: BoxFit.cover),
+            ),
+*/

@@ -1,14 +1,9 @@
-class ActiveUserSingelton {
-  //! TODO Use `Singleton`
+class ActiveUserSingleton {
   String? userUid;
 
-  static ActiveUserSingelton? _instance;
+  static ActiveUserSingleton? _instance;
 
-  ActiveUserSingelton._({this.userUid});
+  ActiveUserSingleton._({this.userUid});
 
-  factory ActiveUserSingelton({String? userUid}) {
-    _instance ??= ActiveUserSingelton._(userUid: userUid);
-
-    return _instance!;
-  }
+  factory ActiveUserSingleton({String? userUid}) => _instance ??= ActiveUserSingleton._(userUid: userUid);
 }

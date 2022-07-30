@@ -4,7 +4,7 @@ import 'package:fitness_app/core/shared_widgets.dart/custom_back_button.dart';
 import 'package:fitness_app/core/shared_widgets.dart/rectangle_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../../core/shared_widgets.dart/two_button_switch.dart';
+import '../../../../core/shared_widgets.dart/buttons_switch.dart/buttons_switch.dart';
 import '../../../user_information/presentation/pages/get_name_page.dart';
 import '../provider/credential_controller.dart';
 import '../widgets/log_in_view_chooser.dart';
@@ -44,7 +44,7 @@ class CredentialPage extends StatelessWidget {
                         top: height * 0.07,
                         bottom: height * 0.02,
                       ),
-                      child: TwoButtonSwitch(
+                      child: ButtonsSwitch(
                         activeIndex: value.selectedLogInType.index,
                         onChanged: (index) {
                           value.setLogInType(
@@ -80,8 +80,6 @@ class CredentialPage extends StatelessWidget {
                               value.selectedLogInType == LogInType.signIn ? value.isSignInValid : value.isSignUpValid,
                           text: EnglishText.continueText,
                           onTap: () {
-                            CredentialController value = Provider.of<CredentialController>(context, listen: false); //! FIXME Gereksiz instance
-
                             switch (value.selectedLogInType) {
                               case LogInType.signIn:
                                 {

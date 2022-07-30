@@ -10,7 +10,7 @@ class EditUserInfo{
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   void addBodyInfo(UserInfoEntities userInfoEntities) async{
-    await _firestore.collection("Users").doc(ActiveUserSingelton().userUid).set({
+    await _firestore.collection("Users").doc(ActiveUserSingleton().userUid).set({
       "name": userInfoEntities.name,
       "age":userInfoEntities.age,
       "lenght":userInfoEntities.lenght,

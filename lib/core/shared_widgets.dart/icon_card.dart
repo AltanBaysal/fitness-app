@@ -13,14 +13,14 @@ class IconCard extends StatelessWidget {
   final String icon;
   final double size;
   final bool isActive;
-  final VoidCallback onTap; //! TODO
+  final VoidCallback onTap;
 
   Color? get iconColor => isActive ? null : Colors.grey;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap, //! TODO
+      onTap: onTap,
       child: Card(
         elevation: 9,
         shape: RoundedRectangleBorder(

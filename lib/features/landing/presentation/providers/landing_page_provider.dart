@@ -26,6 +26,6 @@ class LandingPageProvider extends ChangeNotifier{
 
     var user = await FirebaseAuth.instance.signInWithCredential(credential);
 
-    ActiveUserSingelton().userUid = user.user?.uid;
+    ActiveUserSingleton().userUid = user.user?.uid;
   }
 }
