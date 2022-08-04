@@ -1,12 +1,7 @@
-import 'package:fitness_app/core/constants/text_constants.dart';
-import 'package:fitness_app/core/enums/log_in_type.dart';
 import 'package:fitness_app/core/shared_widgets.dart/custom_back_button.dart';
-import 'package:fitness_app/core/shared_widgets.dart/rectangle_button.dart';
+import 'package:fitness_app/features/credential/presentation/widgets/continue_button.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../../../../core/shared_widgets.dart/buttons_switch.dart/buttons_switch.dart';
-import '../../../user_information/presentation/pages/get_name_page.dart';
-import '../provider/credential_controller.dart';
+import '../widgets/log_in_button_switch.dart';
 import '../widgets/log_in_view_chooser.dart';
 
 class CredentialPage extends StatelessWidget {
@@ -15,7 +10,6 @@ class CredentialPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -33,78 +27,12 @@ class CredentialPage extends StatelessWidget {
                     )
                   ],
                 ),
-                Consumer<CredentialController>(
-                  builder: (
-                    BuildContext context,
-                    CredentialController value,
-                    Widget? child,
-                  ) {
-                    return Container(
-                      margin: EdgeInsets.only(
-                        top: height * 0.07,
-                        bottom: height * 0.02,
-                      ),
-                      child: ButtonsSwitch(
-                        activeIndex: value.selectedLogInType.index,
-                        onChanged: (index) {
-                          value.setLogInType(
-                            value.selectedLogInType = LogInType.values[index],
-                          );
-                        },
-                        buttonTexts: const [EnglishText.signUp, EnglishText.signIn],
-                      ),
-                    );
-                  },
-                ),
-                Consumer<CredentialController>(
-                  builder: (
-                    BuildContext context,
-                    CredentialController value,
-                    Widget? child,
-                  ) {
-                    return LogInViewChooser(
-                      logInType: value.selectedLogInType,
-                    );
-                  },
-                ),
-                Column(
-                  children: [
-                    Consumer<CredentialController>(
-                      builder: (
-                        BuildContext context,
-                        CredentialController value,
-                        Widget? child,
-                      ) {
-                        return RectangleButton(
-                          isActive:
-                              value.selectedLogInType == LogInType.signIn ? value.isSignInValid : value.isSignUpValid,
-                          text: EnglishText.continueText,
-                          onTap: () {
-                            switch (value.selectedLogInType) {
-                              case LogInType.signIn:
-                                {
-                                  value.signIn();
-                                  break;
-                                }
-                              case LogInType.signUp:
-                                {
-                                  value.signUp();
-                                  break;
-                                }
-                            }
 
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const GetNamePage(),
-                              ),
-                            );
-                          },
-                        );
-                      },
-                    ),
-                  ],
-                ),
+                const LogInButtonSwitch(),
+
+                const LogInViewChooser(),
+
+                const ContinueButton(),
               ],
             ),
           ),

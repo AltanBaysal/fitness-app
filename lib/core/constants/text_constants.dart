@@ -18,7 +18,7 @@ class EnglishText{
   static const String signIn = "Sing In";
   static const String signUp = "Sign up";
 
-  static const String reWritePassword = "Re-write Password";
+  static const String rewritePassword = "Re-write Password";
 
   static const String email = "Email";
   static const String password = "Password";

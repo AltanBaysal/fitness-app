@@ -1,5 +1,5 @@
 import 'package:fitness_app/core/constants/text_constants.dart';
-import 'package:fitness_app/core/enums/get_body_info_pages.dart';
+import 'package:fitness_app/core/enums/body_info_type.dart';
 import 'package:fitness_app/features/user_information/presentation/provider/user_information_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -11,6 +11,9 @@ import '../../../home/home_page.dart';
 import '../widgets/body_info_view_chooser.dart';
 import '../widgets/info_page_dots_indicator.dart';
 
+
+
+//! PARÇALA
 class GetBodyInfoPage extends StatelessWidget {
   const GetBodyInfoPage({Key? key}) : super(key: key);
 
@@ -34,10 +37,10 @@ class GetBodyInfoPage extends StatelessWidget {
                     );
 
                     if (value.activeBodyInfoPage ==
-                        GetBodyInfoPageEnum.values.first) {
+                        BodyInfoType.values.first) {
                       Navigator.pop(context);
                     } else {
-                      value.setActiveBodyInfoPage(GetBodyInfoPageEnum
+                      value.setActiveBodyInfoPage(BodyInfoType
                           .values[value.activeBodyInfoPage.index - 1]);
                     }
                   },
@@ -75,7 +78,7 @@ class GetBodyInfoPage extends StatelessWidget {
                     );
 
                     if (value.activeBodyInfoPage ==
-                        GetBodyInfoPageEnum.values.last) {
+                        BodyInfoType.values.last) {
                       value.setUserInfos();
                       Navigator.push(
                         context,
@@ -84,7 +87,7 @@ class GetBodyInfoPage extends StatelessWidget {
                         ),
                       );
                     } else {
-                      value.setActiveBodyInfoPage(GetBodyInfoPageEnum
+                      value.setActiveBodyInfoPage(BodyInfoType
                           .values[value.activeBodyInfoPage.index + 1]);
                     }
                   },

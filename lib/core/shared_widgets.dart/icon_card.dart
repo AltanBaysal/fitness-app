@@ -11,7 +11,7 @@ class IconCard extends StatelessWidget {
   }) : super(key: key);
 
   final String icon;
-  final double size;
+  final Size size;
   final bool isActive;
   final VoidCallback onTap;
 
@@ -27,9 +27,9 @@ class IconCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         child: Container(
-          padding: EdgeInsets.all(size * 0.2),
-          height: size,
-          width: size,
+          padding: EdgeInsets.all(size.width * 0.2),
+          height: size.height,
+          width: size.width,
           child: Center(
             child: SvgPicture.asset(
               icon,

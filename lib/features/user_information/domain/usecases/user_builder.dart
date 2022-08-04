@@ -4,6 +4,7 @@ import 'package:fitness_app/features/user_information/domain/entities/user_entit
 import '../../../../core/enums/sex.dart';
 
 class UserBuilder{
+  //! AYARLA
   UserBuilder({required UserInfoEntities user});
   final UserInfoEntities _user = UserInfoEntities();
 

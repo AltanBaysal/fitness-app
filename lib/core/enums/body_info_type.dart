@@ -1,0 +1,1 @@
+enum BodyInfoType{sex,age,lenght,weight}

@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 
-//! services yap
+//! services yap KESİNLİKLE
 class LandingPageProvider extends ChangeNotifier{
   final GoogleSignIn googleSignIn = GoogleSignIn();
   GoogleSignInAccount? _user;

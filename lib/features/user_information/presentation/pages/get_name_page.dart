@@ -6,6 +6,8 @@ import 'package:provider/provider.dart';
 import '../../../../core/shared_widgets.dart/custom_back_button.dart';
 import '../../../../core/shared_widgets.dart/rectangle_button.dart';
 
+
+//? PARÇALA
 class GetNamePage extends StatelessWidget {
   const GetNamePage({Key? key}) : super(key: key);
   @override

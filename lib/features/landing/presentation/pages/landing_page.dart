@@ -5,11 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/shared_widgets.dart/rectangle_button.dart';
-import '../../../../core/shared_widgets.dart/rectangle_icon_button.dart';
 import '../../../credential/presentation/pages/credential_page.dart';
 import '../../../user_information/presentation/pages/get_name_page.dart';
 import '../providers/landing_page_provider.dart';
 
+
+//! PARÇALA
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
 

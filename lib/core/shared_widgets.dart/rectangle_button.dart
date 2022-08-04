@@ -1,7 +1,6 @@
 import 'package:fitness_app/core/constants/colors_constants.dart';
 import 'package:flutter/material.dart';
 
-//? isimlendirme
 class RectangleButton extends StatelessWidget {
   const RectangleButton({
     Key? key,
@@ -15,7 +14,7 @@ class RectangleButton extends StatelessWidget {
   final Color color;
   final bool isActive;
   final VoidCallback onTap;
-  final Color passiveColor; //? isimlendirme
+  final Color passiveColor;
   final Widget child;
 
   Color get containerColor => isActive ? color : passiveColor;
@@ -43,6 +42,8 @@ class RectangleButton extends StatelessWidget {
 }
 
 
+
+//! işin bitince sil
 /*
 Text(
             text,

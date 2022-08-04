@@ -6,9 +6,9 @@ import 'package:provider/provider.dart';
 import '../../../../core/constants/icons_constants.dart';
 import '../../../../core/shared_widgets.dart/icon_card.dart';
 
+//? parçala
 class GetSexInfoView extends StatelessWidget {
   const GetSexInfoView({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -64,7 +64,7 @@ class GetSexInfoView extends StatelessWidget {
                       Widget? child,
                     ) {
                       return IconCard(
-                        size: width * 0.3,
+                        size:Size.square(width * 0.3),
                         icon: CustomIcons.maleGender,
                         isActive: value.selectedSex == Sex.male,
                         onTap: () {

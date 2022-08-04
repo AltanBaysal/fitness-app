@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_app/core/services/user_singelton.dart';
 
 class EmailAuthService {
+  //! data repository katmanlarını yap
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<User?> signIn(String email, String password) async {

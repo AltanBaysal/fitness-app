@@ -4,6 +4,8 @@ import 'package:fitness_app/features/landing/presentation/pages/landing_page.dar
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'features/credential/presentation/pages/credential_page.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -27,7 +29,7 @@ class FitnessApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LandingPage(),
+      home: const CredentialPage(),     //LandingPage(),
     );
   }
 }

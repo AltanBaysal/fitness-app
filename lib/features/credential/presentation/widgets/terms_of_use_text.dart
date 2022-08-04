@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 class TermsOfUseText extends StatelessWidget {
   const TermsOfUseText({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
