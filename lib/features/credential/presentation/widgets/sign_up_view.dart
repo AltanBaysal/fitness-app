@@ -5,10 +5,8 @@ import 'package:fitness_app/features/credential/presentation/widgets/custom_cred
 import 'package:fitness_app/features/credential/presentation/widgets/terms_of_use_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../../core/constants/colors_constants.dart';
 import '../../../../core/helper/password_validation.dart';
 
-//! FIXME TextFormField'lar icin ortak widget yaz ve cikar  PARÇALA
 
 class SignUpView extends StatelessWidget {
   const SignUpView({Key? key}) : super(key: key);
@@ -63,7 +61,13 @@ class SignUpView extends StatelessWidget {
                   return CustomCredentialTextFormField(
                     title: EnglishText.rewritePassword,
                     key: value.passwordCheckSignUpFormFieldKey,
-                    validator:(value){},//! düzelt
+                    validator:(text){
+                      //? bunun burda olması doğru mu ?
+                      if(text != value.passwordSignUpTextController.text){
+                        return EnglishText.passwordMustBeConfirmed;
+                      }
+                      return null;
+                    },
                   );
                 },
               ),

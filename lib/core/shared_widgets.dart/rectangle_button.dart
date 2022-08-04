@@ -40,23 +40,3 @@ class RectangleButton extends StatelessWidget {
     );
   }
 }
-
-
-
-//! işin bitince sil
-/*
-Text(
-            text,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: height * 0.023,
-            ),
-          ),
-
-
-SizedBox(
-              height: height * 0.04,
-              width: height * 0.04,
-              child: SvgPicture.asset(icon, fit: BoxFit.cover),
-            ),
-*/

@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fitness_app/core/init/controller_list.dart';
-import 'package:fitness_app/features/landing/presentation/pages/landing_page.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -9,6 +9,9 @@ import 'features/credential/presentation/pages/credential_page.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  //? ekran dönmesini böyle kitledim
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
   runApp(
     MultiProvider(
       providers: controllerList,
@@ -16,9 +19,6 @@ void main() async {
     ),
   );
 }
-
-//! text field input typelar ayarlanacak
-//! yatay ekranı kitle
 
 class FitnessApp extends StatelessWidget {
   const FitnessApp({Key? key}) : super(key: key);
@@ -33,19 +33,3 @@ class FitnessApp extends StatelessWidget {
     );
   }
 }
-
-
-/*
-Selector<MainPageController, MainPageMod>(
-          selector: (
-            BuildContext context,
-            MainPageController mainPageController,
-          ) {
-            return mainPageController.mainPageMod;
-          },
-          builder:
-              (BuildContext context, MainPageMod mainPageMod, Widget? child) {
-            return MainPageSliverAppBarActions(mainPageMod: mainPageMod);
-          },
-        ),
-*/

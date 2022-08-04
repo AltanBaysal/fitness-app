@@ -24,7 +24,6 @@ class CredentialController with ChangeNotifier {
       TextEditingController();
 
 
-
   bool get isContinueButtonActive {
     switch (selectedLogInType) {
       case LogInType.signIn:
@@ -41,7 +40,6 @@ class CredentialController with ChangeNotifier {
       emailSignUpFormFieldKey.isValid &&
       passwordSignUpFormFieldKey.isValid &&
       passwordCheckSignUpFormFieldKey.isValid;
-
 
   void setLogInType(LogInType logInType) {
     selectedLogInType = logInType;
