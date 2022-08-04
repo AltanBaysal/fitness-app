@@ -1,5 +1,5 @@
-import 'package:fitness_app/core/shared_widgets.dart/custom_back_button.dart';
 import 'package:fitness_app/features/credential/presentation/widgets/continue_button.dart';
+import 'package:fitness_app/features/credential/presentation/widgets/credential_page_back_button.dart';
 import 'package:flutter/material.dart';
 import '../widgets/log_in_button_switch.dart';
 import '../widgets/log_in_view_chooser.dart';
@@ -9,8 +9,6 @@ class CredentialPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -18,21 +16,14 @@ class CredentialPage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    CustomBackButton(
-                      mainContext: context,
-                      size: width * 0.05,
-                    )
-                  ],
-                ),
+              children: const[
+                CredentialPageBackButton(),
 
-                const LogInButtonSwitch(),
+                LogInButtonSwitch(),
 
-                const LogInViewChooser(),
+                LogInViewChooser(),
 
-                const ContinueButton(),
+                ContinueButton(),
               ],
             ),
           ),

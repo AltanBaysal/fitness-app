@@ -1,4 +1,4 @@
-import 'package:fitness_app/core/enums/log_in_type.dart';
+import 'package:fitness_app/features/credential/enums/log_in_type.dart';
 import 'package:flutter/material.dart';
 import '../../domain/usecases/email_auth.dart';
 

@@ -1,4 +1,4 @@
-import 'package:fitness_app/core/enums/log_in_type.dart';
+import 'package:fitness_app/features/credential/enums/log_in_type.dart';
 import 'package:fitness_app/features/credential/presentation/provider/credential_controller.dart';
 import 'package:fitness_app/features/credential/presentation/widgets/sign_in_view.dart';
 import 'package:fitness_app/features/credential/presentation/widgets/sign_up_view.dart';

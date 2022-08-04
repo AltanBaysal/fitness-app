@@ -1,5 +1,4 @@
 
-
 import 'package:fitness_app/core/constants/text_constants.dart';
 
 String? passwordValidator(String? password1) {

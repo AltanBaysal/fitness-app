@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../core/constants/text_constants.dart';
-import '../../../../core/enums/log_in_type.dart';
+import '../../enums/log_in_type.dart';
 import '../../../../core/shared_widgets.dart/buttons_switch.dart/buttons_switch.dart';
 import '../provider/credential_controller.dart';
 
