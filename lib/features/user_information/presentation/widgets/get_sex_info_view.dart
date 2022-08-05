@@ -36,7 +36,7 @@ class GetSexInfoView extends StatelessWidget {
                       Widget? child,
                     ) {
                       return IconCard(
-                        size: width * 0.3,
+                        size: Size.square(width * 0.3),
                         icon: CustomIcons.femaleGender,
                         isActive: value.selectedSex == Sex.female,
                         onTap: () {
@@ -73,7 +73,9 @@ class GetSexInfoView extends StatelessWidget {
                       );
                     },
                   ),
+                  
                   const SizedBox(height: 10),
+
                   const Text(
                     EnglishText.men,
                     style: TextStyle(color: Colors.grey),
