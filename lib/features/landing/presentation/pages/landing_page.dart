@@ -1,14 +1,10 @@
-import 'package:fitness_app/core/constants/colors_constants.dart';
-import 'package:fitness_app/core/constants/icons_constants.dart';
-import 'package:fitness_app/core/constants/text_constants.dart';
+import 'package:fitness_app/features/landing/presentation/widgets/app_description.dart';
+import 'package:fitness_app/features/landing/presentation/widgets/continue_without_signin_up_button.dart';
+import 'package:fitness_app/features/landing/presentation/widgets/google_login_button.dart';
+import 'package:fitness_app/features/landing/presentation/widgets/landing_page_company_logo.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
-import '../../../../core/shared_widgets.dart/rectangle_button.dart';
-import '../../../credential/presentation/pages/credential_page.dart';
-import '../../../user_information/presentation/pages/get_name_page.dart';
-import '../providers/landing_page_provider.dart';
-
+import '../widgets/email_login_button.dart';
+import '../widgets/facebook_login_button.dart';
 
 //! PARÇALA
 class LandingPage extends StatelessWidget {
@@ -23,68 +19,27 @@ class LandingPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: height * 0.08,
-                  width: height * 0.08,
-                  child: SvgPicture.asset(CustomIcons.companyLogo),
-                ),
-              ],
-            ),
+            const LandingPageCompanyLogo(),
 
             SizedBox(height: height * 0.05),
-            Text(
-              EnglishText.loremIpsum1,
-              style: TextStyle(
-                fontSize: height * 0.02,
-              ),
-              textAlign: TextAlign.center,
-            ),
+
+            const AppDescription(),
+
             SizedBox(height: height * 0.1),
 
-            RectangleIconButton(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const CredentialPage(),
-                  ),
-                );
-              },
-              icon: CustomIcons.email,
-              color: Colors.white,
-            ),
+            const EmailLoginButton(),
 
             SizedBox(height: height * 0.05),
-            RectangleIconButton(
-              onTap: () {
-                Provider.of<LandingPageProvider>(context,listen: false).googleLogin();
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const GetNamePage(),
-                  ),
-                );
-              },
-              icon: CustomIcons.google,
-              color: Colors.white,
-            ),
+
+            const GoogleLoginButton(),
 
             SizedBox(height: height * 0.05),
-            RectangleIconButton(
-              onTap: () {},
-              icon: CustomIcons.facebook,
-              color: Colors.white,
-            ),
-            
+
+            const FacebookLoginButton(),
+
             SizedBox(height: height * 0.08),
-            RectangleButton(
-              onTap: () {},
-              text: EnglishText.continueWithoutSigningUp,
-              color: CustomColors.lightBlack,
-            ),
+
+            const ContinueWithoutSigninUpButton(),
           ],
         ),
       ),
