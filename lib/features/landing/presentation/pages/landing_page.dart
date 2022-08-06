@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import '../widgets/email_login_button.dart';
 import '../widgets/facebook_login_button.dart';
 
-//! PARÇALA
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
 
