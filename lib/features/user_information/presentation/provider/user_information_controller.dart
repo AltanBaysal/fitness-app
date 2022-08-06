@@ -7,9 +7,7 @@ import '../../domain/usecases/edit_user_info.dart';
 
 class UserInformationController with ChangeNotifier {
   BodyInfoType activeBodyInfoPage = BodyInfoType.sex;
-
   final TextEditingController getNameTextController = TextEditingController();
-
   Sex selectedSex = Sex.unknown;
   int selectedAge = 0;
   int selectedLenght = 0;
@@ -26,7 +24,7 @@ class UserInformationController with ChangeNotifier {
   }
 
   void setUserInfos() {
-    //! BUİLDER A İHTİYAÇ ÇOKTA YOK
+    //? builder'a ihtiyaçım var mı?
     UserBuilder userBuilder = UserBuilder(user: UserInfoEntities());
     userBuilder.setUserName(getNameTextController.text);
     userBuilder.setUserSex(selectedSex);
