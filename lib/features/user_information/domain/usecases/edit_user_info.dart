@@ -5,9 +5,10 @@ import 'package:fitness_app/features/user_information/domain/entities/user_entit
 import '../../../../core/services/user_singelton.dart';
 
 
-//! yap bunu
+
 class EditUserInfo{
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  //? burdaki string türündeki veriler doğru değil gibi
 
   void addBodyInfo(UserInfoEntities userInfoEntities) async{
     await _firestore.collection("Users").doc(ActiveUserSingleton().userUid).set({

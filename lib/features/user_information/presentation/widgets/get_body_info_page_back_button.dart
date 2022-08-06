@@ -16,18 +16,18 @@ class GetBodyInfoPageBackButton extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            //! geliştirilebilir
             UserInformationController value =
                 Provider.of<UserInformationController>(
               context,
               listen: false,
             );
 
-            if (value.activeBodyInfoPage == BodyInfoType.values.first) {
+            int activeIndex = value.activeBodyInfoPage.index;
+
+            if (activeIndex == 0) {
               Navigator.pop(context);
             } else {
-              value.setActiveBodyInfoPage(
-                  BodyInfoType.values[value.activeBodyInfoPage.index - 1]);
+              value.setActiveBodyInfoPage(BodyInfoType.values[activeIndex - 1]);
             }
           },
           child: SizedBox(

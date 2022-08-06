@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../../../core/constants/text_constants.dart';
 import '../../../../core/enums/body_info_type.dart';
 import '../../../../core/shared_widgets.dart/rectangle_button.dart';
@@ -15,7 +14,6 @@ class UserInformationNextButton extends StatelessWidget {
     return RectangleButton(
       child: const Text(EnglishText.next),
       onTap: () {
-        //! geliştirilebilir
         UserInformationController value =
             Provider.of<UserInformationController>(
           context,
