@@ -12,7 +12,12 @@ class UserInformationNextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RectangleButton(
-      child: const Text(EnglishText.next),
+      child: const Text(
+        EnglishText.next,
+        style: TextStyle(
+          color: Colors.white,
+        ),
+      ),
       onTap: () {
         UserInformationController value =
             Provider.of<UserInformationController>(

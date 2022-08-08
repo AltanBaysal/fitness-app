@@ -12,9 +12,12 @@ class FacebookLoginButton extends StatelessWidget {
     return RectangleButton(
       onTap: () {},
       color: Colors.white,
-      child: SvgCoveredSizedBox(
-        size: Size.square(height * 0.5),
-        svgAssets: CustomIcons.facebook,
+      child: Padding(
+        padding: EdgeInsets.all(height*0.015),
+        child: SvgCoveredSizedBox(
+          size: Size.square(height * 0.5),
+          svgAssets: CustomIcons.facebook,
+        ),
       ),
     );
   }

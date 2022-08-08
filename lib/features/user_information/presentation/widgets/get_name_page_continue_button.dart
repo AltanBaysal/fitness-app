@@ -9,7 +9,7 @@ class GetNamePageContinueButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RectangleButton(
-      child: const Text(EnglishText.continueText),
+      child: const Text(EnglishText.continueText,style: TextStyle(color: Colors.white),),
       onTap: () {
         Navigator.push(
           context,

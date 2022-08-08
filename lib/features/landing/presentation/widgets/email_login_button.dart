@@ -21,9 +21,12 @@ class EmailLoginButton extends StatelessWidget {
         );
       },
       color: Colors.white,
-      child: SvgCoveredSizedBox(
-        size: Size.square(height * 0.5),
-        svgAssets: CustomIcons.email,
+      child: Padding(
+        padding: EdgeInsets.all(height*0.015),
+        child: SvgCoveredSizedBox(
+          size: Size.square(height * 0.5),
+          svgAssets: CustomIcons.email,
+        ),
       ),
     );
   }

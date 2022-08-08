@@ -9,6 +9,7 @@ class RectangleButton extends StatelessWidget {
     this.isActive = true,
     this.color = CustomColors.darkBlue,
     this.passiveColor = Colors.grey,
+    this.elevation,
   }) : super(key: key);
 
   final Color color;
@@ -16,7 +17,8 @@ class RectangleButton extends StatelessWidget {
   final VoidCallback onTap;
   final Color passiveColor;
   final Widget child;
-
+  final double? elevation;
+ 
   Color get containerColor => isActive ? color : passiveColor;
 
   VoidCallback? get onTapFunction => isActive ? onTap : null;
@@ -27,14 +29,17 @@ class RectangleButton extends StatelessWidget {
 
     return GestureDetector(
       onTap: onTapFunction,
-      child: Container(
-        height: height * 0.07,
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.all(Radius.circular(7)),
-          color: containerColor,
+      child: Card(
+        color: containerColor,
+        elevation: elevation,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(7)),
         ),
-        child: Center(
-          child: child,
+        child: SizedBox(
+          height: height * 0.07,
+          child: Center(
+            child: child,
+          ),
         ),
       ),
     );

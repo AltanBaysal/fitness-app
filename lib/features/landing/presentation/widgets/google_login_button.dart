@@ -23,9 +23,12 @@ class GoogleLoginButton extends StatelessWidget {
         );
       },
       color: Colors.white,
-      child: SvgCoveredSizedBox(
-        size: Size.square(height * 0.5),
-        svgAssets: CustomIcons.google,
+      child: Padding(
+        padding: EdgeInsets.all(height*0.015),
+        child: SvgCoveredSizedBox(
+          size: Size.square(height * 0.5),
+          svgAssets: CustomIcons.google,
+        ),
       ),
     );
   }

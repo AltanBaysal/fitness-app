@@ -25,14 +25,20 @@ class CredentialController with ChangeNotifier {
 
 
   bool get isContinueButtonActive {
+    print("sa");
     switch (selectedLogInType) {
       case LogInType.signIn:
+        print("In");
+        print(isSignInValid);
         return isSignInValid;
       case LogInType.signUp:
+        print("up");
+        print(isSignUpValid);
         return isSignUpValid;
     }
   }
 
+  //! çalışmıyor
   bool get isSignInValid =>
       emailSignInFormFieldKey.isValid && passwordSignInFormFieldKey.isValid;
 

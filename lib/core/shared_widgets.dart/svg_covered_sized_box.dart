@@ -15,7 +15,7 @@ class SvgCoveredSizedBox extends StatelessWidget {
     return SizedBox(
       height: size.height,
       width: size.width,
-      child: SvgPicture.asset(svgAssets,fit: BoxFit.cover),
+      child: SvgPicture.asset(svgAssets,fit: BoxFit.contain),
     );
   }
 }
