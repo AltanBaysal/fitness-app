@@ -1,18 +1,11 @@
-import 'package:fitness_app/core/helper/form_state_global_key_extensions.dart';
+import 'package:fitness_app/core/helper/password_validation.dart';
 import 'package:fitness_app/features/credential/enums/log_in_type.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/helper/email_validation.dart';
 import '../../domain/usecases/email_auth.dart';
 
 class CredentialController with ChangeNotifier {
   LogInType selectedLogInType = LogInType.signUp;
-
-  //? bunları böyle açıkta saklamaktan daha iyi bir yöntem olmalı
-  //? hem keyleri hem controllerı tutmak çokta mantıklı değil gibi
-  GlobalKey<FormState> emailSignInFormFieldKey = GlobalKey<FormState>();
-  GlobalKey<FormState> passwordSignInFormFieldKey = GlobalKey<FormState>();
-  GlobalKey<FormState> emailSignUpFormFieldKey = GlobalKey<FormState>();
-  GlobalKey<FormState> passwordSignUpFormFieldKey = GlobalKey<FormState>();
-  GlobalKey<FormState> passwordCheckSignUpFormFieldKey = GlobalKey<FormState>();
 
   final TextEditingController emailSignInTextController =
       TextEditingController();
@@ -23,29 +16,26 @@ class CredentialController with ChangeNotifier {
   final TextEditingController passwordSignUpTextController =
       TextEditingController();
 
-
   bool get isContinueButtonActive {
-    print("sa");
     switch (selectedLogInType) {
       case LogInType.signIn:
-        print("In");
-        print(isSignInValid);
         return isSignInValid;
       case LogInType.signUp:
-        print("up");
-        print(isSignUpValid);
         return isSignUpValid;
     }
   }
 
   //! çalışmıyor
-  bool get isSignInValid =>
-      emailSignInFormFieldKey.isValid && passwordSignInFormFieldKey.isValid;
+  bool get isSignInValid {
+    return emailValidator(emailSignInTextController.text) == null &&
+        passwordValidator(passwordSignInTextController.text) == null;
+  }
 
   bool get isSignUpValid =>
+      false; /*
       emailSignUpFormFieldKey.isValid &&
       passwordSignUpFormFieldKey.isValid &&
-      passwordCheckSignUpFormFieldKey.isValid;
+      passwordCheckSignUpFormFieldKey.isValid;*/
 
   void setLogInType(LogInType logInType) {
     selectedLogInType = logInType;
@@ -71,6 +61,8 @@ class CredentialController with ChangeNotifier {
   void signUp() {
     EmailAuthService emailAuthService = EmailAuthService();
     emailAuthService.signUp(
-        emailSignUpTextController.text, passwordSignUpTextController.text);
+      emailSignUpTextController.text,
+      passwordSignUpTextController.text,
+    );
   }
 }

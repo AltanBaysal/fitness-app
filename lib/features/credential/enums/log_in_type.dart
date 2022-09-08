@@ -1,1 +1,1 @@
-enum LogInType{signIn,signUp}
+enum LogInType{signUp,signIn}

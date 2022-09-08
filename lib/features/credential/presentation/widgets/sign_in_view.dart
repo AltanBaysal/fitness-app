@@ -27,7 +27,6 @@ class SignInView extends StatelessWidget {
               return CustomCredentialTextFormField(
                 title: EnglishText.email,
                 controller: value.emailSignInTextController,
-                key: value.emailSignInFormFieldKey,
                 validator: emailValidator,
               );
             },
@@ -42,7 +41,6 @@ class SignInView extends StatelessWidget {
               return CustomCredentialTextFormField(
                 title: EnglishText.password,
                 controller: value.passwordSignInTextController,
-                key: value.passwordSignInFormFieldKey,
                 validator: passwordValidator,
               );
             },

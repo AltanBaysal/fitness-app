@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../constants/colors_constants.dart';
@@ -20,9 +19,7 @@ class ButtonsSwitchButton extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Expanded(
       child: GestureDetector(
-        onTap: () {
-          onTap();
-        },
+        onTap: onTap,
         child: Card(
           elevation: isActive ? 9 : 0,
           shape: RoundedRectangleBorder(

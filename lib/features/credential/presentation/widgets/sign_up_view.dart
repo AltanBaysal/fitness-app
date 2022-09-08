@@ -31,7 +31,6 @@ class SignUpView extends StatelessWidget {
                   return CustomCredentialTextFormField(
                     title: EnglishText.email,
                     controller: value.emailSignUpTextController,
-                    key: value.emailSignUpFormFieldKey,
                     validator: emailValidator,
                   );
                 },
@@ -46,7 +45,6 @@ class SignUpView extends StatelessWidget {
                   return CustomCredentialTextFormField(
                     title: EnglishText.createPassword,
                     controller: value.passwordSignUpTextController,
-                    key: value.passwordSignUpFormFieldKey,
                     validator: passwordValidator,
                   );
                 },
@@ -60,7 +58,6 @@ class SignUpView extends StatelessWidget {
                 ) {
                   return CustomCredentialTextFormField(
                     title: EnglishText.rewritePassword,
-                    key: value.passwordCheckSignUpFormFieldKey,
                     validator:(text){
                       //? bunun burda olması doğru mu ?
                       if(text != value.passwordSignUpTextController.text){
